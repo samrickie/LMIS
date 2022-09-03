@@ -1,0 +1,45 @@
+
+{% extends  'customer/index.html' %}
+{% block content %}
+<form method="POST" action="{% url 'customer-update' customer.pk %}" class="row g-3">
+    {% csrf_token %}
+    <div>
+         <label>
+        First name:
+              </label>
+        <label>
+            <input type="text" name="first_name" value="{{ customer.first_name}}">
+        </label>
+
+    </div>
+    
+
+            <div>
+                <label>
+                    Middle name:
+                </label>
+                <label>
+                    <input type="text" name="middle_name" value="{{ customer.middle_name}}">
+                </label>
+            </div>
+
+                    <div>
+                        <label>
+                            last name:
+                        </label>
+                        <label>
+                            <input type="text" name="last_name" value="{{ customer.last_name}}">
+                        </label>
+                    </div>
+
+                         <div>
+                                <label>
+                                    Age:
+                                </label>
+                             <label>
+                                 <input type="text" name="age" value="{{ customer.age}}">
+                             </label>
+                         </div>
+                          <input type="submit" value="submit" class="btn btn-primary">
+</form>
+{% endblock %}

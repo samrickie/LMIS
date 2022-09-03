@@ -1,0 +1,16 @@
+{% extends  'customer/index.html' %}
+{% block content %}
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+      <a href="{% url 'customer-list'%}"><button type="button" class="btn-close" aria-label="Close"></button></a>
+{{customer.first_name}} {{customer.middle_name}} {{customer.last_name}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Age: {{customer.age}}</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+</div>
+{% endblock %}
